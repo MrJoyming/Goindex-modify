@@ -27,6 +27,7 @@ var gofooter = Vue.component("gofooter", {
             <div class="field is-grouped is-grouped-multiline">
                 <div class="control">
                     <div class="tags has-addons">
+                        <span class="tag is-light">原版</span>
                         <a class="tag is-dark" href="https://github.com/Aicirou/goindex-theme-acrou">goindex-template-acrou</a>
                         <span class="tag is-light">MIT &nbsp;<i class="fab fa-github"></i></span>
                     </div>

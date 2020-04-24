@@ -38,8 +38,7 @@ var layout = Vue.component("layout", {
       this.$refs.navbar.siteName = config.siteName;
       this.$refs.breadcrumb.render(path);
       var param = window.location.search;
-      var reg = /\/\d+:$/g;
-      if (path.match(reg) || param.indexOf("?a=view") < 0) {
+      if (param.indexOf("?a=view") < 0) {
         this.show = "list";
         this.$refs.list.render(path, getQueryString(param, "q"));
       } else {

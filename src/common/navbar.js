@@ -68,20 +68,20 @@ let navbar = Vue.component("navbar", {
                           </div>
   
                           <div class="navbar-end">
-                              <div class="navbar-item">
+                              <!--<div class="navbar-item">
                                   <div class="field is-grouped">
                                       <p class="control has-icons-left" style="width:100%;">
-                                          <input class="input is-rounded has-text-grey" @keyup.enter="query" v-model="param" type="search" placeholder="Search or jump to…">
+                                          <input class="input is-rounded has-text-grey" @keyup.enter="query" v-model="param" type="search" placeholder="Search or jump">
                                           <span class="icon is-small is-left">
                                               <i class="fas fa-search"></i>
                                           </span>
                                       </p>
                                   </div>
-                              </div>
+                              </div>-->
                               <!--<a class="navbar-item" target="_blank">
                                   <i class="fa fa-question-circle" aria-hidden="true"></i>
                               </a>-->
-                              <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Aicirou/goindex-theme-acrou">
+                              <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/MrJoyming/Goindex-modify">
                                 <i class="fab fa-github"></i> 
                               </a>
                           </div>

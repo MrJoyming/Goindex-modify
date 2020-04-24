@@ -5,7 +5,6 @@ import { utc2beijing, formatFileSize } from "../utils/AcrouUtil";
 var list = Vue.component("list", {
   data: function () {
     return {
-      page: {},
       files: [],
       loading: false,
       columns: [
@@ -43,15 +42,11 @@ var list = Vue.component("list", {
     render(path, param) {
       this.loading = true;
       var password = localStorage.getItem("password" + path);
-      var p = {
-          password: password || null,
-          page_token: null,
-          page_index: 0
-      };
+
       axios
-        .post(path, p)
+        .post(path, { password: password, q: decodeURIComponent(param) })
         .then((res) => {
-          var data = res.data.data;
+          var data = res.data;
           if (
             typeof data != "null" &&
             data.hasOwnProperty("error") &&
@@ -93,7 +88,7 @@ var list = Vue.component("list", {
                   this.$emit("headmd", {
                     display: true,
                     file: item,
-                    path: p,
+                    path: p
                   });
                 }
                 // REDEME.md
@@ -169,19 +164,6 @@ var list = Vue.component("list", {
       </table>
       <div v-show="files.length==0" class="has-text-centered no-content">
       </div>
-      <nav class="pagination is-centered is-small" role="navigation" aria-label="pagination">
-        <a class="pagination-previous">Previous</a>
-        <a class="pagination-next">Next page</a>
-        <ul class="pagination-list">
-          <li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
-          <li><span class="pagination-ellipsis">&hellip;</span></li>
-          <li><a class="pagination-link" aria-label="Goto page 45">45</a></li>
-          <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">46</a></li>
-          <li><a class="pagination-link" aria-label="Goto page 47">47</a></li>
-          <li><span class="pagination-ellipsis">&hellip;</span></li>
-          <li><a class="pagination-link" aria-label="Goto page 86">86</a></li>
-        </ul>
-      </nav>
     </div>
     `,
 });
