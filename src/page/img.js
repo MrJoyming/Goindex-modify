@@ -4,7 +4,7 @@ var goimg = Vue.component("goimg", {
   data: function () {
     return {
       imgurl: "",
-      url:'',
+      url:"",
     };
   },
   methods: {
@@ -24,12 +24,8 @@ var goimg = Vue.component("goimg", {
           </div>
           <div class="mdui-textfield">
             <label class="mdui-textfield-label">HTML 引用</label>
-            <input class="mdui-textfield-input" type="text" value="<img src='{{url}}' />" 
-            <img :src="url">
-
-           
-            
-           
+            <label class="mdui-textfield-label"> <img src='url' </label>
+            <input class="mdui-textfield-input" type="text" value="<img src='url'>" />
           </div>
                 <div class="mdui-textfield">
             <label class="mdui-textfield-label">Markdown 引用地址</label>
